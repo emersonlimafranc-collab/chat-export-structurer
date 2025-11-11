@@ -35,10 +35,11 @@ env/
 *~
 .DS_Store
 
-# SQLite databases
+# SQLite databases (except sample)
 *.sqlite
 *.sqlite3
 *.db
+!examples/sample_archive.sqlite
 
 # Example data - exclude large files, keep small examples
 examples/*.json

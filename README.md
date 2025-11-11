@@ -43,6 +43,14 @@ Settings → Export conversations
 
 ### 2. Test Import
 
+Try the included sample database:
+
+```bash
+sqlite3 examples/sample_archive.sqlite "SELECT title, role, text FROM messages LIMIT 5;"
+```
+
+Or test parsing your own export:
+
 ```bash
 python src/ingest.py \
   --in path/to/export.json \
@@ -139,6 +147,36 @@ python src/ingest.py --in grok.json --db unified.sqlite --format grok
 
 ## Database Schema
 
+### Entity Relationship
+
+```mermaid
+erDiagram
+    messages ||--o{ messages_fts_docids : "indexed_by"
+    messages_fts_docids ||--|| messages_fts : "maps_to"
+    
+    messages {
+        TEXT message_id PK
+        TEXT canonical_thread_id
+        TEXT platform
+        TEXT account_id
+        TEXT ts
+        TEXT role
+        TEXT text
+        TEXT title
+        TEXT source_id
+    }
+    
+    messages_fts {
+        INTEGER rowid PK
+        TEXT text
+    }
+    
+    messages_fts_docids {
+        INTEGER rowid PK
+        TEXT message_id FK
+    }
+```
+
 ### `messages` table
 
 ```sql
@@ -158,8 +196,8 @@ CREATE TABLE messages (
 ### Full-text search
 
 Uses SQLite FTS5 for fast text queries:
-- `messages_fts` - Virtual FTS table
-- `messages_fts_docids` - Maps FTS rowids to message IDs
+- `messages_fts` - Virtual FTS table (indexed text content)
+- `messages_fts_docids` - Maps FTS rowids to message IDs for joins
 
 ## Example Queries
 
@@ -192,7 +230,19 @@ sqlite3 -header -csv archive.sqlite \
 
 ## Example Data
 
-See `examples/` for sample export files from each platform.
+The `examples/` directory includes:
+- Sample export files from each platform (JSON format)
+- `sample_archive.sqlite` - Pre-built database with 12 messages from all three platforms
+
+Try querying the sample database:
+
+```bash
+# View all conversations
+sqlite3 examples/sample_archive.sqlite "SELECT DISTINCT title, platform FROM messages;"
+
+# Search for specific terms
+sqlite3 examples/sample_archive.sqlite "SELECT role, text FROM messages WHERE text LIKE '%learning%';"
+```
 
 ## Roadmap
 
@@ -269,7 +319,6 @@ See [LICENSE](LICENSE) for full terms.
 
 ---
 
-**Built by [Channing Chasko](https://github.com/1ch1n)**  
-Part of [MyChatArchive](https://mychatarchive.com) — coming soon.
+**Built by Channing Chasko · [MyChatArchive.com](https://mychatarchive.com) (coming soon)**
 
 Released under the [MIT License](LICENSE).
