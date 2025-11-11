@@ -51,12 +51,29 @@ Include a sanitized sample in `examples/example_your_platform.json` (< 5KB).
 
 ## Pull Request Guidelines
 
+**All pull requests require review and approval before merging.**
+
+Before submitting:
+
 - ✅ Test with real exports from the platform
 - ✅ Include sanitized example file (remove personal data!)
 - ✅ Update README's "Supported Formats" section
 - ✅ No external API dependencies
 - ✅ Follow existing code style
 - ✅ All parsers must handle large files gracefully
+- ✅ Fork the repository and create a feature branch
+- ✅ Write clear commit messages
+
+### Submission Process
+
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/new-parser`)
+3. Make your changes and test thoroughly
+4. Commit with clear messages
+5. Push to your fork
+6. Open a Pull Request with detailed description
+
+The maintainer will review and provide feedback. Changes may be requested before approval.
 
 ## Code Style
 
