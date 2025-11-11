@@ -1,0 +1,80 @@
+[
+  {
+    "id": "example_conv_001",
+    "title": "Python Best Practices",
+    "create_time": 1704067200.0,
+    "update_time": 1704070800.0,
+    "mapping": {
+      "msg_001": {
+        "id": "msg_001",
+        "message": {
+          "id": "msg_001",
+          "author": {
+            "role": "user"
+          },
+          "create_time": 1704067200.0,
+          "content": {
+            "content_type": "text",
+            "parts": ["What are some Python best practices for writing clean code?"]
+          }
+        },
+        "parent": null,
+        "children": ["msg_002"]
+      },
+      "msg_002": {
+        "id": "msg_002",
+        "message": {
+          "id": "msg_002",
+          "author": {
+            "role": "assistant"
+          },
+          "create_time": 1704067215.0,
+          "content": {
+            "content_type": "text",
+            "parts": ["Here are key Python best practices:\n\n1. Follow PEP 8 style guidelines\n2. Use meaningful variable names\n3. Write docstrings for functions\n4. Keep functions small and focused\n5. Use list comprehensions when appropriate\n6. Handle exceptions properly\n7. Write tests for your code"]
+          }
+        },
+        "parent": "msg_001",
+        "children": ["msg_003"]
+      },
+      "msg_003": {
+        "id": "msg_003",
+        "message": {
+          "id": "msg_003",
+          "author": {
+            "role": "user"
+          },
+          "create_time": 1704067300.0,
+          "content": {
+            "content_type": "text",
+            "parts": ["Can you give me an example of a good docstring?"]
+          }
+        },
+        "parent": "msg_002",
+        "children": ["msg_004"]
+      },
+      "msg_004": {
+        "id": "msg_004",
+        "message": {
+          "id": "msg_004",
+          "author": {
+            "role": "assistant"
+          },
+          "create_time": 1704067320.0,
+          "content": {
+            "content_type": "text",
+            "parts": ["Sure! Here's an example of a good docstring:\n\n```python\ndef calculate_average(numbers):\n    \"\"\"\n    Calculate the arithmetic mean of a list of numbers.\n    \n    Args:\n        numbers (list): A list of numeric values\n    \n    Returns:\n        float: The average of all numbers\n    \n    Raises:\n        ValueError: If the list is empty\n    \"\"\"\n    if not numbers:\n        raise ValueError(\"Cannot calculate average of empty list\")\n    return sum(numbers) / len(numbers)\n```"]
+          }
+        },
+        "parent": "msg_003",
+        "children": []
+      }
+    },
+    "moderation_results": [],
+    "current_node": "msg_004",
+    "plugin_ids": null,
+    "conversation_id": "example_conv_001",
+    "is_archived": false
+  }
+]
+

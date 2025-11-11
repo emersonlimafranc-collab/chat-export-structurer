@@ -1,0 +1,73 @@
+[
+  {
+    "uuid": "12345678-1234-5678-1234-567812345678",
+    "name": "SQL Query Help",
+    "summary": "",
+    "created_at": "2025-01-15T10:30:00.000000Z",
+    "updated_at": "2025-01-15T10:35:00.000000Z",
+    "account": "main",
+    "chat_messages": [
+      {
+        "uuid": "msg-001",
+        "text": "How do I join two tables in SQL?",
+        "content": [
+          {
+            "type": "text",
+            "text": "How do I join two tables in SQL?"
+          }
+        ],
+        "sender": "human",
+        "created_at": "2025-01-15T10:30:00.000000Z",
+        "updated_at": "2025-01-15T10:30:00.000000Z",
+        "attachments": [],
+        "files": []
+      },
+      {
+        "uuid": "msg-002",
+        "text": "There are several types of SQL joins:\n\n1. INNER JOIN - Returns matching rows from both tables\n2. LEFT JOIN - Returns all rows from left table and matching rows from right\n3. RIGHT JOIN - Returns all rows from right table and matching rows from left\n4. FULL OUTER JOIN - Returns all rows from both tables\n\nExample INNER JOIN:\n```sql\nSELECT users.name, orders.total\nFROM users\nINNER JOIN orders ON users.id = orders.user_id;\n```",
+        "content": [
+          {
+            "type": "text",
+            "text": "There are several types of SQL joins:\n\n1. INNER JOIN - Returns matching rows from both tables\n2. LEFT JOIN - Returns all rows from left table and matching rows from right\n3. RIGHT JOIN - Returns all rows from right table and matching rows from left\n4. FULL OUTER JOIN - Returns all rows from both tables\n\nExample INNER JOIN:\n```sql\nSELECT users.name, orders.total\nFROM users\nINNER JOIN orders ON users.id = orders.user_id;\n```"
+          }
+        ],
+        "sender": "assistant",
+        "created_at": "2025-01-15T10:30:15.000000Z",
+        "updated_at": "2025-01-15T10:30:15.000000Z",
+        "attachments": [],
+        "files": []
+      },
+      {
+        "uuid": "msg-003",
+        "text": "What's the difference between WHERE and HAVING?",
+        "content": [
+          {
+            "type": "text",
+            "text": "What's the difference between WHERE and HAVING?"
+          }
+        ],
+        "sender": "human",
+        "created_at": "2025-01-15T10:32:00.000000Z",
+        "updated_at": "2025-01-15T10:32:00.000000Z",
+        "attachments": [],
+        "files": []
+      },
+      {
+        "uuid": "msg-004",
+        "text": "The key differences:\n\n- WHERE filters rows before grouping\n- HAVING filters groups after aggregation\n\nWHERE example:\n```sql\nSELECT * FROM orders WHERE total > 100;\n```\n\nHAVING example:\n```sql\nSELECT customer_id, SUM(total) \nFROM orders \nGROUP BY customer_id \nHAVING SUM(total) > 1000;\n```",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key differences:\n\n- WHERE filters rows before grouping\n- HAVING filters groups after aggregation\n\nWHERE example:\n```sql\nSELECT * FROM orders WHERE total > 100;\n```\n\nHAVING example:\n```sql\nSELECT customer_id, SUM(total) \nFROM orders \nGROUP BY customer_id \nHAVING SUM(total) > 1000;\n```"
+          }
+        ],
+        "sender": "assistant",
+        "created_at": "2025-01-15T10:32:20.000000Z",
+        "updated_at": "2025-01-15T10:32:20.000000Z",
+        "attachments": [],
+        "files": []
+      }
+    ]
+  }
+]
+
