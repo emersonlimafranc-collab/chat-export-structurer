@@ -73,7 +73,7 @@ def _parse_conversation(conv_wrapper: Dict) -> Iterator[Dict]:
                 try:
                     dt = datetime.fromisoformat(date_val.replace("Z", "+00:00"))
                     created_at = dt.timestamp()
-                except:
+                except (ValueError, TypeError, AttributeError):
                     created_at = 0.0
             else:
                 created_at = 0.0

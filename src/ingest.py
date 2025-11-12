@@ -23,7 +23,7 @@ def norm_text(s):
     return re.sub(r"\s+", " ", s).strip().lower()
 
 def sha1(s: str) -> str:
-    """Generate SHA1 hash of string."""
+    """Generate SHA1 hash for message deduplication (not for cryptographic security)."""
     return hashlib.sha1(s.encode("utf-8", errors="ignore")).hexdigest()
 
 def iso_from_epoch(ts):

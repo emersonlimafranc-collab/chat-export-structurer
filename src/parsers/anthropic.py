@@ -67,7 +67,7 @@ def _parse_conversation(convo: Dict) -> Iterator[Dict]:
             # Anthropic uses ISO format like "2025-10-17T06:49:48.665364Z"
             dt = datetime.fromisoformat(created_at_str.replace("Z", "+00:00"))
             created_at = dt.timestamp()
-        except:
+        except (ValueError, TypeError, AttributeError):
             created_at = 0.0
         
         yield {

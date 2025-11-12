@@ -10,7 +10,7 @@
 
 If you discover a security vulnerability, please report it responsibly.
 
-**Contact:** Open a private security advisory on GitHub or email the maintainer directly.
+**Contact:** Open a private security advisory on GitHub at https://github.com/1ch1n/chat-export-structurer/security/advisories/new
 
 Please do **not** open a public issue for security vulnerabilities.
 
